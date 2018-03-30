@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Wallet : Player
+    class Wallet
     {
                
         // Member Variables
