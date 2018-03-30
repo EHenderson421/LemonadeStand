@@ -34,6 +34,7 @@ namespace LemonadeStand
                 
            
         }
+
         public void DisplayWeatherToday(double weatherTodayResult)
         {
             if (weatherTodayResult == 1)
@@ -50,7 +51,11 @@ namespace LemonadeStand
             }
 
         }
+        
+        public void DisplayWeatherForcast(double weathertodayresult)
+        {
 
+        }
 
     }
 }

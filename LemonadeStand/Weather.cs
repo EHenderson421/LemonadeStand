@@ -10,8 +10,8 @@ namespace LemonadeStand
     {
         // Member Variables
         Random rnd;
-        public string result;
-        public string weatherForcast;
+        public int result;
+        
 
         //Constructor
         public Weather(Random rnd)
@@ -21,15 +21,14 @@ namespace LemonadeStand
 
 
         //Member Methods
-       
+
 
         //public override void WeatherForcast()
-        //{
-        //    Random random = new Random();
-        //    possibleMove = choice[random.Next(0, choice.Count)];
-        //    Console.WriteLine("\n" + name + " Has Decided To Throw: " + possibleMove);
-        //}
-
+        public int WeatherForcast()
+        {
+            result = rnd.Next(1, 4);
+            return result;
+        }
 
 
 
