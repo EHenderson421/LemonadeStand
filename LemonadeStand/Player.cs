@@ -6,17 +6,31 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    abstract class Player
+    class Player
     {
         // Member Variables
-
-
+        public string name;
+        public string nameInput;
 
         //Constructor
+        public Player()
+        {
 
+        }
 
 
         //Member Methods
+
+        public void GetPlayerName()
+        {
+            User_Interface.DisplayMessage("Enter Your Name: ");
+            
+            nameInput = User_Interface.GetUserInput();
+            name = nameInput.ToUpper();
+
+
+        }
+        
 
 
 

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class User_Interface
+    public static class User_Interface
     {
         // Member Variables
 
 
 
         //Constructor
-
+        
 
 
         //Member Methods
