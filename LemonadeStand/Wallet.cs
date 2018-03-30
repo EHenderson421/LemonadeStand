@@ -8,8 +8,7 @@ namespace LemonadeStand
 {
     class Wallet : Player
     {
-       
-        
+               
         // Member Variables
 
 
