@@ -12,6 +12,10 @@ namespace LemonadeStand
         {
             Game mygame = new Game();
             mygame.StartGame();
+            //Customer mycustomer = new Customer();
+            //mycustomer.CustomersToday();
+            //mycustomer.DetermineWillBuy();
+
             Console.ReadKey();
         }
     }

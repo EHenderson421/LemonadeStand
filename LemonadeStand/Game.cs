@@ -13,6 +13,11 @@ namespace LemonadeStand
         Day weatherToday;
         double weatherTodayResult;
         Player playerOne;
+        Customer todaysCustomer;
+        Customer buyingToday;
+        double buyingCustomersToday;
+        double numberOfCustomersToday;
+        
         //Constructor
         public Game()
 
@@ -20,6 +25,8 @@ namespace LemonadeStand
             rnd = new Random();
             weatherToday = new Day(rnd);
             playerOne = new Player();
+            todaysCustomer = new Customer(rnd);
+            
         }
 
 
@@ -30,11 +37,13 @@ namespace LemonadeStand
             playerOne.GetPlayerName();
             User_Interface.DisplayMessage("Welcome To The Game: " + playerOne.name);
             weatherTodayResult = weatherToday.TodaysWeather();
-
             DisplayWeatherToday(weatherTodayResult);
+            numberOfCustomersToday = todaysCustomer.CustomersToday(weatherTodayResult);
+            buyingCustomersToday = todaysCustomer.DetermineWillBuy(weatherTodayResult); 
+            
 
-                
-           
+
+
         }
 
         public void DisplayWeatherToday(double weatherTodayResult)
