@@ -32,8 +32,9 @@ namespace LemonadeStand
             }
             else if (chargePrice >= 2.00)
             {
-                User_Interface.DisplayMessage("Your price is a little high and so are you!!!");
+                User_Interface.DisplayMessage("Your price is a little high, and so are you!!!");
                 User_Interface.DisplayMessage("Please Try Again");
+                InputPrice();
             }
 
             return chargePrice;

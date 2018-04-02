@@ -17,7 +17,9 @@ namespace LemonadeStand
         Customer buyingToday;
         double buyingCustomersToday;
         double numberOfCustomersToday;
-        
+        Store chargePrice;
+        double pricePerCup;
+
         //Constructor
         public Game()
 
@@ -26,7 +28,7 @@ namespace LemonadeStand
             weatherToday = new Day(rnd);
             playerOne = new Player();
             todaysCustomer = new Customer(rnd);
-            
+            chargePrice = new Store();
         }
 
 
@@ -39,8 +41,8 @@ namespace LemonadeStand
             weatherTodayResult = weatherToday.TodaysWeather();
             DisplayWeatherToday(weatherTodayResult);
             numberOfCustomersToday = todaysCustomer.CustomersToday(weatherTodayResult);
-            buyingCustomersToday = todaysCustomer.DetermineWillBuy(weatherTodayResult); 
-            
+            buyingCustomersToday = todaysCustomer.DetermineWillBuy(weatherTodayResult);
+            pricePerCup = chargePrice.InputPrice();
 
 
 
