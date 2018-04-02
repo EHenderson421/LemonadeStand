@@ -27,7 +27,7 @@ namespace LemonadeStand
             
             nameInput = User_Interface.GetUserInput();
             name = nameInput.ToUpper();
-
+            
 
         }
         

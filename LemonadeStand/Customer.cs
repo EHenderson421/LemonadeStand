@@ -22,7 +22,7 @@ namespace LemonadeStand
         public Customer(Random rnd)
         {
             this.rnd = rnd;
-            //weatherToday.TodaysWeather();
+            
         }
 
 
