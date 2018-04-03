@@ -51,6 +51,7 @@ namespace LemonadeStand
             playerMoney = money.DisplayMoneyInWallet();
             getSupplies = buySupplies.BuyLemon();
             getSupplies = buySupplies.BuyIce();
+            getSupplies = buySupplies.BuySuger();
             pricePerCup = chargePrice.InputPrice();
             numberOfCustomersToday = todaysCustomer.CustomersToday(weatherTodayResult);
             buyingCustomersToday = todaysCustomer.DetermineWillBuy(weatherTodayResult);
