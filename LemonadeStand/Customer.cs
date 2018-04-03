@@ -45,7 +45,7 @@ namespace LemonadeStand
                 todaysCustomer = rnd.Next(20, 40);
             }
             
-            User_Interface.DisplayMessage("TodaysCustomers" + todaysCustomer);
+            User_Interface.DisplayMessage("Todays Customer Count" + todaysCustomer);
 
             return todaysCustomer;
             
@@ -102,7 +102,7 @@ namespace LemonadeStand
             }
 
             buyingToday = buyingCustomer++;
-            User_Interface.DisplayMessage("will buy" + buyingToday);
+            User_Interface.DisplayMessage("Customers That Bought Today" + buyingToday);
             return buyingToday;
 
 

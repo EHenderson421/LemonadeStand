@@ -46,10 +46,12 @@ namespace LemonadeStand
             User_Interface.DisplayMessage("Welcome To The Game: " + playerOne.name);
             weatherTodayResult = weatherToday.TodaysWeather();
             DisplayWeatherToday(weatherTodayResult);
+            playerMoney = money.DisplayMoneyInWallet();
+            pricePerCup = chargePrice.InputPrice();
             numberOfCustomersToday = todaysCustomer.CustomersToday(weatherTodayResult);
             buyingCustomersToday = todaysCustomer.DetermineWillBuy(weatherTodayResult);
-            pricePerCup = chargePrice.InputPrice();
-            playerMoney = money.DisplayMoneyInWallet();
+            
+            
 
 
         }
