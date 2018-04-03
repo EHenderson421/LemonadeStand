@@ -15,6 +15,7 @@ namespace LemonadeStand
         Inventory lemon;
         Inventory ice;
         Inventory suger;
+        Inventory cup;
         Wallet money;
         Wallet wallet;
 
@@ -26,6 +27,7 @@ namespace LemonadeStand
             lemon = new Inventory();
             ice = new Inventory();
             suger = new Inventory();
+            cup = new Inventory();
             money = new Wallet();
             wallet = new Wallet();
         }
@@ -127,7 +129,7 @@ namespace LemonadeStand
                 User_Interface.DisplayMessage("You are now restocked with Suger");
                 User_Interface.DisplayMessage("You have " + inventory.suger + " servings of Suger");
                 User_Interface.DisplayMessage("you have $" + wallet.money + " left in you wallet.");
-                return inventory.lemon;
+                return inventory.suger;
             }
 
             return wallet.money;
@@ -135,6 +137,31 @@ namespace LemonadeStand
         }
 
 
+        public double BuyCup()
+        {
+            User_Interface.DisplayMessage("Your currantly have: " + inventory.cup + " Cups");
+            User_Interface.DisplayMessage("Ice cost $.50 per cup. How many cups would you like to buy? ");
+            restockChoice = int.Parse(User_Interface.GetUserInput());
+
+            if (wallet.money - (restockChoice * .50) < 0)
+            {
+                User_Interface.DisplayMessage("Sorry you do not have enought money. Plese try again.");
+                BuyCup();
+            }
+            else
+            {
+
+                inventory.cup = inventory.cup + restockChoice;
+                wallet.money = wallet.money - (restockChoice * .50);
+                User_Interface.DisplayMessage("You are now restocked with Cups");
+                User_Interface.DisplayMessage("You have " + inventory.cup + " Cups");
+                User_Interface.DisplayMessage("you have $" + wallet.money + " left in you wallet.");
+                return inventory.cup;
+            }
+
+            return wallet.money;
+
+        }
 
 
     }
