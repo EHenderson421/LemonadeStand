@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
 
         // Member Variables
-        double money;
+        public double money;
 
 
         //Constructor
@@ -24,8 +24,8 @@ namespace LemonadeStand
 
         public double DisplayMoneyInWallet()
         {
-            User_Interface.DisplayMessage("You have $" + money + " In your Wallet");
-            return money;
+            User_Interface.DisplayMessage("You have $" + money + " Left in your Wallet");
+           return money;
         }
         
 

@@ -9,13 +9,23 @@ namespace LemonadeStand
     class Store
     {
         // Member Variables
-        double chargePrice;
-
+        public double chargePrice;
+        public int choiceLemon;
+        public int choiceice;
+        Inventory inventory;
+        Inventory lemon;
+        
+        Wallet money;
+        Wallet wallet;
 
         //Constructor
         public Store()
         {
-
+            
+            inventory = new Inventory();
+            lemon = new Inventory();
+            money = new Wallet();
+            wallet = new Wallet();
         }
 
 
@@ -40,6 +50,38 @@ namespace LemonadeStand
             User_Interface.DisplayMessage("Todays price per cup is " + chargePrice);
             return chargePrice;
         }
+
+
+        public double BuyLemons()
+        {
+            User_Interface.DisplayMessage("Your currantly have: " + inventory.lemon + " Lemons ");
+            User_Interface.DisplayMessage("Lemons cost $0.10 each. How many Lemons Would you like to buy? ");
+            choiceLemon = int.Parse(User_Interface.GetUserInput());
+            
+            if (wallet.money - (choiceLemon * .10) < 0)
+            {
+                User_Interface.DisplayMessage("Sorry you do not have enought money. Plese try again.");
+                BuyLemons();
+            }
+            else
+            {
+
+                inventory.lemon = inventory.lemon + choiceLemon;
+                wallet.money = wallet.money - (choiceLemon * .1);
+                User_Interface.DisplayMessage("You are now restocked with Lemons");
+                User_Interface.DisplayMessage("You have " + inventory.lemon + " Lemons");
+                User_Interface.DisplayMessage("you have $" + wallet.money + " left in you wallet.");
+                return inventory.lemon;
+            }
+
+            return wallet.money;
+            
+        }
+
+        
+
+
+
 
 
 

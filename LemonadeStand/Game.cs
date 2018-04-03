@@ -11,18 +11,18 @@ namespace LemonadeStand
         // Member Variables
         Random rnd;
         Day weatherToday;
-        double weatherTodayResult;
+        public double weatherTodayResult;
         Player playerOne;
         Customer todaysCustomer;
         Customer buyingToday;
-        double buyingCustomersToday;
-        double numberOfCustomersToday;
+        public double buyingCustomersToday;
+        public double numberOfCustomersToday;
         Store chargePrice;
-        double pricePerCup;
+        public double pricePerCup;
         Wallet money;
-        double playerMoney;
-
-
+        public double playerMoney;
+        Store buySupplies;
+        public double getSupplies;
         //Constructor
         public Game()
 
@@ -33,7 +33,7 @@ namespace LemonadeStand
             todaysCustomer = new Customer(rnd);
             chargePrice = new Store();
             money = new Wallet();
-
+            buySupplies = new Store();
 
         }
 
@@ -47,6 +47,7 @@ namespace LemonadeStand
             weatherTodayResult = weatherToday.TodaysWeather();
             DisplayWeatherToday(weatherTodayResult);
             playerMoney = money.DisplayMoneyInWallet();
+            getSupplies = buySupplies.BuyLemons(); 
             pricePerCup = chargePrice.InputPrice();
             numberOfCustomersToday = todaysCustomer.CustomersToday(weatherTodayResult);
             buyingCustomersToday = todaysCustomer.DetermineWillBuy(weatherTodayResult);

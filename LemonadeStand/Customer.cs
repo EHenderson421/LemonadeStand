@@ -11,12 +11,12 @@ namespace LemonadeStand
         // Member Variables
         Random rnd;
         Game weatherTodayResult;
-        double todaysCustomer;
-        double buyingToday;
+        public double todaysCustomer;
+        public double buyingToday;
         Day weatherToday;
-        bool willBuy;
+        public bool willBuy;
        
-        int buyingCustomer;
+        public int buyingCustomer;
         //Constructor
 
         public Customer(Random rnd)
@@ -45,7 +45,7 @@ namespace LemonadeStand
                 todaysCustomer = rnd.Next(20, 40);
             }
             
-            User_Interface.DisplayMessage("Todays Customer Count" + todaysCustomer);
+            User_Interface.DisplayMessage("Todays Customer Count " + todaysCustomer);
 
             return todaysCustomer;
             
@@ -102,7 +102,7 @@ namespace LemonadeStand
             }
 
             buyingToday = buyingCustomer++;
-            User_Interface.DisplayMessage("Customers That Bought Today" + buyingToday);
+            User_Interface.DisplayMessage("Customers That Bought Today " + buyingToday);
             return buyingToday;
 
 

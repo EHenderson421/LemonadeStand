@@ -9,11 +9,11 @@ namespace LemonadeStand
     class Inventory
     {
         // Member Variables
-        int lemon;
-        int ice;
-        int suger;
-        int cup;
-        bool enoughInventory;
+        public int lemon;
+        public int ice;
+        public int suger;
+        public int cup;
+        public bool enoughInventory;
         Wallet money;
        
         
@@ -48,6 +48,13 @@ namespace LemonadeStand
 
             return enoughInventory;
         }
+
+        public void DisplayInventory()
+        {
+            User_Interface.DisplayMessage("Inventory: " + lemon + " Lemons, " + ice + " Ice, " + suger + " Suger, " + cup + " Cups, ");
+
+        }
+
 
         public void DisplayWalletandInventory()
         {
