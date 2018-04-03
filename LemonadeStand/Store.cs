@@ -37,6 +37,7 @@ namespace LemonadeStand
                 InputPrice();
             }
 
+            User_Interface.DisplayMessage("Todays price per cup is " + chargePrice);
             return chargePrice;
         }
 
