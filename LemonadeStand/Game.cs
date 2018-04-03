@@ -19,6 +19,9 @@ namespace LemonadeStand
         double numberOfCustomersToday;
         Store chargePrice;
         double pricePerCup;
+        Wallet money;
+        double playerMoney;
+
 
         //Constructor
         public Game()
@@ -29,6 +32,9 @@ namespace LemonadeStand
             playerOne = new Player();
             todaysCustomer = new Customer(rnd);
             chargePrice = new Store();
+            money = new Wallet();
+
+
         }
 
 
@@ -43,7 +49,7 @@ namespace LemonadeStand
             numberOfCustomersToday = todaysCustomer.CustomersToday(weatherTodayResult);
             buyingCustomersToday = todaysCustomer.DetermineWillBuy(weatherTodayResult);
             pricePerCup = chargePrice.InputPrice();
-
+            playerMoney = money.DisplayMoneyInWallet();
 
 
         }

@@ -30,7 +30,7 @@ namespace LemonadeStand
                 User_Interface.DisplayMessage("Please Try Again");
                 InputPrice();
             }
-            else if (chargePrice >= 2.00)
+            else if (chargePrice >= 3.00)
             {
                 User_Interface.DisplayMessage("Your price is a little high, and so are you!!!");
                 User_Interface.DisplayMessage("Please Try Again");
