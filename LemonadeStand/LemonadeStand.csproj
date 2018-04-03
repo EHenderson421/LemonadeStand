@@ -69,7 +69,6 @@
     <Compile Include="User_Interface.cs" />
     <Compile Include="Wallet.cs" />
     <Compile Include="Weather.cs" />
-    <Compile Include="xdghb.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
