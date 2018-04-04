@@ -14,8 +14,9 @@ namespace LemonadeStand
         public double weatherTodayResult;
         Player playerOne;
         Customer todaysCustomer;
-        Customer buyingToday;
-        public double buyingCustomersToday;
+        Customer buyingTodayWeather;
+        Customer buyingCustomer;
+        public double buyingCustomersWeather;
         public double numberOfCustomersToday;
         Store chargePrice;
         public double pricePerCup;
@@ -23,8 +24,9 @@ namespace LemonadeStand
         public double playerMoney;
         Store buySupplies;
         public double getSupplies;
-       
+        public double buyTodayWeatherPrice;
         
+
         //Constructor
         public Game()
 
@@ -33,6 +35,8 @@ namespace LemonadeStand
             weatherToday = new Day(rnd);
             playerOne = new Player();
             todaysCustomer = new Customer(rnd);
+            buyingTodayWeather = new Customer(rnd);
+            buyingCustomer = new Customer(rnd);
             chargePrice = new Store();
             money = new Wallet();
             buySupplies = new Store();
@@ -55,8 +59,8 @@ namespace LemonadeStand
             getSupplies = buySupplies.BuyCup();
             pricePerCup = chargePrice.InputPrice();
             numberOfCustomersToday = todaysCustomer.CustomersToday(weatherTodayResult);
-            buyingCustomersToday = todaysCustomer.DetermineWillBuy(weatherTodayResult);
-            
+            buyingCustomersWeather = todaysCustomer.DetermineWillBuyWeather(weatherTodayResult);
+            buyTodayWeatherPrice = todaysCustomer.DetermineWillBuyPrice(pricePerCup);
             
 
 

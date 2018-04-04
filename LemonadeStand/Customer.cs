@@ -12,17 +12,22 @@ namespace LemonadeStand
         Random rnd;
         Game weatherTodayResult;
         public double todaysCustomer;
-        public double buyingToday;
+        public double buyingTodayWeather;
         Day weatherToday;
         public bool willBuy;
-       
-        public int buyingCustomer;
+        public double buyingCustomer;
+        public double buyingCustomerWeather;
+        public double buyingCustomerPrice;
+        Store chargePrice;
+        Game pricePerCup;
+        Game buyTodayWeatherPrice;
         //Constructor
 
         public Customer(Random rnd)
         {
             this.rnd = rnd;
-            
+            chargePrice = new Store();
+           // pricePerCup = new Game();
         }
 
 
@@ -52,10 +57,10 @@ namespace LemonadeStand
         }
         
 
-        public double DetermineWillBuy(double weatherTodayResult)
+        public double DetermineWillBuyWeather(double weatherTodayResult)
         {
 
-            buyingCustomer = 0;
+            buyingCustomerWeather = 0;
             Random rnd = new Random();
             for (int i = 0; i < todaysCustomer; i++)
             {
@@ -65,7 +70,7 @@ namespace LemonadeStand
                     if (weatherBuy < 90)
                     {
                         willBuy = true;
-                        buyingCustomer++;
+                        buyingCustomerWeather++;
                     }
                     else
                     {
@@ -78,7 +83,7 @@ namespace LemonadeStand
                     if (weatherBuy < 70)
                     {
                         willBuy = true;
-                        buyingCustomer++;
+                        buyingCustomerWeather++;
                     }
                     else
                     {
@@ -91,7 +96,7 @@ namespace LemonadeStand
                     if (weatherBuy < 50)
                     {
                         willBuy = true;
-                        buyingCustomer++;
+                        buyingCustomerWeather++;
                     }
                     else
                     {
@@ -101,10 +106,145 @@ namespace LemonadeStand
                                              
             }
 
-            buyingToday = buyingCustomer++;
-            User_Interface.DisplayMessage("Customers That Bought Today " + buyingToday);
-            return buyingToday;
+            buyingTodayWeather = buyingCustomerWeather++;
+            User_Interface.DisplayMessage("Customers That walked up Today " + buyingTodayWeather);
+            return buyingTodayWeather;
+            
 
+
+        }
+
+
+        public double DetermineWillBuyPrice(double chargePrice)
+        {
+
+            buyingCustomerPrice = 0;
+            Random rnd = new Random();
+            for (int i = 0; i < buyingTodayWeather; i++)
+            {
+                int buyPrice = rnd.Next(0, 100);
+                if (chargePrice > 0 && chargePrice <= .1)
+                {
+                    if (buyPrice < 100)
+                    {
+                        willBuy = true;
+                        buyingCustomerPrice++;
+                    }
+                    else
+                    {
+                        willBuy = false;
+                    }
+                }
+
+                if (chargePrice > .1 && chargePrice <= .5)
+                {
+                    if (buyPrice < 90)
+                    {
+                        willBuy = true;
+                        buyingCustomerPrice++;
+                    }
+                    else
+                    {
+                        willBuy = false;
+                    }
+                }
+
+                if (chargePrice > .5 && chargePrice <= .75)
+                {
+                    if (buyPrice < 80)
+                    {
+                        willBuy = true;
+                        buyingCustomerPrice++;
+                    }
+                    else
+                    {
+                        willBuy = false;
+                    }
+                }
+
+                if (chargePrice > .75 && chargePrice <= 1)
+                {
+                    if (buyPrice < 70)
+                    {
+                        willBuy = true;
+                        buyingCustomerPrice++;
+                    }
+                    else
+                    {
+                        willBuy = false;
+                    }
+                }
+
+                if (chargePrice > 1 && chargePrice <= 1.25)
+                {
+                    if (buyPrice < 60)
+                    {
+                        willBuy = true;
+                        buyingCustomerPrice++;
+                    }
+                    else
+                    {
+                        willBuy = false;
+                    }
+                }
+
+                if (chargePrice > 1.25 && chargePrice <= 1.5)
+                {
+                    if (buyPrice < 50)
+                    {
+                        willBuy = true;
+                        buyingCustomerPrice++;
+                    }
+                    else
+                    {
+                        willBuy = false;
+                    }
+                }
+            
+
+                if (chargePrice > 1.5 && chargePrice <= 2)
+                {
+                    if (buyPrice < 40)
+                    {
+                        willBuy = true;
+                        buyingCustomerPrice++;
+                    }
+                    else
+                    {
+                        willBuy = false;
+                    }
+                }
+
+                if (chargePrice > 2 && chargePrice <= 2.5)
+                {
+                    if (buyPrice < 30)
+                    {
+                        willBuy = true;
+                        buyingCustomerPrice++;
+                    }
+                    else
+                    {
+                        willBuy = false;
+                    }
+                }
+
+                if (chargePrice > 2.5 && chargePrice <= 3)
+                {
+                    if (buyPrice < 20)
+                    {
+                        willBuy = true;
+                        buyingCustomerPrice++;
+                    }
+                    else
+                    {
+                        willBuy = false;
+                    }
+                }
+            }
+
+        buyingCustomer = buyingCustomerPrice++;
+            User_Interface.DisplayMessage("Customers That Bought Today " + buyingCustomer);
+            return buyingCustomer;
 
 
         }
